@@ -53,3 +53,14 @@ listar_livros()
 print(lista_de_livros_dict["livro_1"])
 print(lista_de_livros_dict["livro_1"]["titulo"])
 
+### 4. Escreva um programa que conta o número de ocorrências de cada caractere em uma string usando um dicionário.
+def contar_caracteres(s):
+    contagem = {}
+    for caractere in s:
+        contagem[caractere] = contagem.get(caractere, 0) + 1
+    return contagem
+
+frase = "Comprei um limão e um abcaaxi.."
+print(contar_caracteres(frase))
+
+### 5. Dada a lista ["maçã", "banana", "cereja"] e o dicionário {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}, calcule o preço total da lista de compras.
