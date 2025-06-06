@@ -64,3 +64,12 @@ frase = "Comprei um limão e um abcaaxi.."
 print(contar_caracteres(frase))
 
 ### 5. Dada a lista ["maçã", "banana", "cereja"] e o dicionário {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}, calcule o preço total da lista de compras.
+frutas: list = ["maçã", "banana", "cereja"]
+precos_frutas: dict = {"maçã": 0.45, 
+                       "banana": 0.30, 
+                       "cereja": 0.65}
+valor_total:float = 0
+for fruta in precos_frutas:
+    valor_total += precos_frutas[fruta]
+
+print(valor_total)
