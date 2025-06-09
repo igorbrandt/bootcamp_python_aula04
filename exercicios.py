@@ -73,3 +73,37 @@ for fruta in precos_frutas:
     valor_total += precos_frutas[fruta]
 
 print(valor_total)
+
+### 6 Eliminação de Duplicatas. Objetivo: Dada uma lista de emails, remover todos os duplicados.
+lista_emails = ["pessoa1@email.com", "pessoa1@email.com", "pessoa2@email.com", "pessoa3@email.com"]
+
+def remover_emails_duplicados():
+    lista_contagem = []
+
+    for email in lista_emails:
+        if email not in lista_contagem:
+            lista_contagem.append(email)
+        else:
+            pass
+    print(lista_contagem)
+
+remover_emails_duplicados()
+
+### 7. Filtragem de Dados. Objetivo: Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
+lista_idades = [5, 6, 8, 18, 21, 44, 55, 9]
+
+def listar_maiores_de_18():
+    maiores_de_18 = []
+    for idade in lista_idades:
+        if idade >= 18 and idade not in maiores_de_18:
+            maiores_de_18.append(idade)
+        else:
+            pass
+    print(maiores_de_18)
+
+listar_maiores_de_18()
+
+### 8. Ordenação Personalizada. Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
+lista_de_pessoas: list = [{"nome": "igor", "idade": 29},{"nome": "enzo", "idade":26},{"nome":"pedro", "idade":63}]
+lista_de_pessoas_ordenada = sorted(lista_de_pessoas, key=lambda x: x["nome"])
+print(lista_de_pessoas_ordenada)
