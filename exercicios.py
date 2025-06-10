@@ -149,3 +149,96 @@ parametros_totais = parametros_igor | parametros_enzo
 print(parametros_totais)
 
 ### 13. Filtragem de Dados em Dicionário. Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
+estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+
+def mostrar_produtos_com_quantidade_positiva():
+    estoque_positivo = {}
+    for produto, quantidade in estoque.items():
+        if quantidade > 0:  # Filtra apenas os produtos com quantidade maior que zero
+            estoque_positivo[produto] = quantidade  # Adiciona ao novo dicionário
+    print(estoque_positivo)
+
+mostrar_produtos_com_quantidade_positiva()
+
+### 14. Extração de Chaves e Valores. Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
+dicionario = {"a": 1, "b": 2, "c": 3}
+chaves = list(dicionario.keys())
+valores = list(dicionario.values())
+print(chaves)
+print(valores)
+
+### 15. Contagem de Frequência de Itens. Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
+string = "Cheguei da escola e fui jogar bola na pracinha"
+
+def contar_numero_de_caracteres():
+    string_lower = string.lower()
+    caracteres = {}
+    for caractere in string_lower:
+        if caractere in caracteres:
+            caracteres[caractere] += 1
+        else:
+            caracteres[caractere] = 1
+    print(caracteres)
+
+contar_numero_de_caracteres()
+
+### 16. Escreva uma função que receba uma lista de números e retorne a soma de todos os números.
+def somar_numeros():
+    somatorio_total = 0
+    lista_de_numeros: list = (input("Digite uma lista de números separados por vírgula: "))
+    lista_de_numeros_individuais = [float(num) for num in lista_de_numeros.split(",")]
+    for numero in lista_de_numeros_individuais:
+        somatorio_total = numero + somatorio_total
+
+    print(somatorio_total)
+
+somar_numeros()
+
+### 17. Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+def eh_numero_primo(numero):
+    if numero < 2: # Números menores que 2 não são primos
+        return False
+    for i in range(2, int(numero ** 0.5) + 1):  # Testa divisores até a raiz quadrada
+        if numero % i == 0:  # Se for divisível por outro número, não é primo
+            return False
+    return True  # Se passou no teste, é primo
+
+num = int(input("Digite um número inteiro: "))
+if eh_numero_primo(num):
+    print(f"{num} é um número primo. ")
+else:
+    print(f"{num} não é um número primo. ")
+
+### 18. Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
+def reverter_string_de_texto(string):
+    string_revertida = ''.join(reversed(string))
+    return string_revertida
+
+texto = input("Digite um texto para ser revertido: ")
+print(reverter_string_de_texto(texto))
+
+### 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as combinações de pares na lista que somem ao número dado.
+def encontrar_pares(lista, alvo):
+    pares = []
+    
+    # Percorre a lista pegando cada número
+    for i in range(len(lista)):
+        for j in range(i + 1, len(lista)):  # Evita pares repetidos
+            if lista[i] + lista[j] == alvo:
+                pares.append((lista[i], lista[j]))  # Adiciona o par na lista
+    
+    return pares
+
+# Testando
+numeros = [1, 2, 3, 4, 5, 6]
+alvo = 7
+print(encontrar_pares(numeros, alvo))
+
+### 20. Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
+dicionario: dict = {"nome":"igor","idade":29,"altura":1.74}
+
+def listar_de_chaves(dicionario):
+    lista_de_chaves = sorted(dicionario.keys())
+    return lista_de_chaves
+    
+print(listar_de_chaves(dicionario))
