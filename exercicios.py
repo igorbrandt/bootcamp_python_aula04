@@ -107,3 +107,45 @@ listar_maiores_de_18()
 lista_de_pessoas: list = [{"nome": "igor", "idade": 29},{"nome": "enzo", "idade":26},{"nome":"pedro", "idade":63}]
 lista_de_pessoas_ordenada = sorted(lista_de_pessoas, key=lambda x: x["nome"])
 print(lista_de_pessoas_ordenada)
+
+### 9. Agregação de Dados. Objetivo: Dado um conjunto de números, calcular a média.
+numeros = [1, 8]
+media = sum(numeros) / len(numeros)
+print(media)
+
+### 10. Divisão de Dados em Grupos. Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
+lista_de_numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1000, 0]
+numeros_pares = []
+numeros_impares = []
+
+def identificar_numeros_pares_e_impares():
+    for numero in lista_de_numeros:
+        if numero % 2 == 0:
+            numeros_pares.append(numero)
+        else:
+            numeros_impares.append(numero)
+    print(f"Números Pares: {numeros_pares}")
+    print(f"Números Ímpares: {numeros_impares}")
+
+identificar_numeros_pares_e_impares()
+
+### 11. Atualização de Dados. Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
+precos_produtos: dict = {"óleo": 2.39, 
+                       "desodorante": 15.20, 
+                       "cortina": 1200.99}
+
+def atualizar_preco_do_produto():
+    produto = input("Digite o produto que deseja atualizar o preço: ")
+    novo_preco = input("Digite o novo preço do produto: ")
+    precos_produtos[produto] = novo_preco
+    print(precos_produtos)
+
+atualizar_preco_do_produto()
+
+### 12. Fusão de Dicionários. Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
+parametros_igor = {"igor": 29}
+parametros_enzo = {"enzo": 26}
+parametros_totais = parametros_igor | parametros_enzo
+print(parametros_totais)
+
+### 13. Filtragem de Dados em Dicionário. Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
