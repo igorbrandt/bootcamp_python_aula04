@@ -1,4 +1,4 @@
-# bootcamp_python_aula04
+# bootcamp_python_aula04: Aula 04 | Type hint, Tipos complexos (Dicionários vs DataFrames Vs Tabelas Vs Excel) e Funções
 
 ## Exercícios de Listas e Dicionários
 1. Crie uma lista com os números de 1 a 10 e use um loop para imprimir cada número elevado ao quadrado.
